@@ -80,6 +80,6 @@ And can also handle collections...
 
 which would generate this...
 
-   select *
-   from my_table
-   where col0 in (@param0, @param1, @param2)
+      select *
+      from my_table
+      where col0 in (@param0, @param1, @param2)
