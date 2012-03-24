@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\Users\LordMorley\Desktop\IDbEz\Specs\bin\Debug\IDbEz.Specs.dll" total="64" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2012-03-24" time="00:25:12">
+  <environment nunit-version="2.5.10.11092" clr-version="2.0.50727.5448" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Program Files (x86)\NUnit 2.5.10\bin\net-2.0" machine-name="THEMAINFRAME" user="LordMorley" user-domain="TheMainframe" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite type="Assembly" name="C:\Users\LordMorley\Desktop\IDbEz\Specs\bin\Debug\IDbEz.Specs.dll" executed="True" result="Success" success="True" time="0.172" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="IDbEz" executed="True" result="Success" success="True" time="0.172" asserts="0">
+        <results>
+          <test-suite type="Namespace" name="Specs" executed="True" result="Success" success="True" time="0.172" asserts="0">
+            <results>
+              <test-suite type="Namespace" name="Extensions" executed="True" result="Success" success="True" time="0.047" asserts="0">
+                <results>
+                  <test-suite type="Namespace" name="DataReaderExtensionsSpecs" executed="True" result="Success" success="True" time="0.016" asserts="0">
+                    <results>
+                      <test-suite type="TestFixture" name="When_checking_a_data_reader_column_for_a_null_value_given_a_data_reader_and_column_name" executed="True" result="Success" success="True" time="0.016" asserts="0">
+                        <results>
+                          <test-suite type="ParameterizedTest" name="The_IsDbNull_extension_should_return_the_whether_the_column_is_db_null" executed="True" result="Success" success="True" time="0.016" asserts="0">
+                            <results>
+                              <test-case name="IDbEz.Specs.Extensions.DataReaderExtensionsSpecs.When_checking_a_data_reader_column_for_a_null_value_given_a_data_reader_and_column_name.The_IsDbNull_extension_should_return_the_whether_the_column_is_db_null(True)" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+                              <test-case name="IDbEz.Specs.Extensions.DataReaderExtensionsSpecs.When_checking_a_data_reader_column_for_a_null_value_given_a_data_reader_and_column_name.The_IsDbNull_extension_should_return_the_whether_the_column_is_db_null(False)" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+                            </results>
+                          </test-suite>
+                        </results>
+                      </test-suite>
+                      <test-suite type="TestFixture" name="When_retrieving_a_nullable_datetime_value_from_a_data_reader_column_given_a_data_reader_and_column_name_of_a_column_containing_a_date_time_value" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                        <results>
+                          <test-case name="IDbEz.Specs.Extensions.DataReaderExtensionsSpecs.When_retrieving_a_nullable_datetime_value_from_a_data_reader_column_given_a_data_reader_and_column_name_of_a_column_containing_a_date_time_value.The_DateTime_extension_should_return_the_date_time_value" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                        </results>
+                      </test-suite>
+                      <test-suite type="TestFixture" name="When_retrieving_a_nullable_datetime_value_from_a_data_reader_column_given_a_data_reader_and_column_name_of_a_null_column" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                        <results>
+                          <test-case name="IDbEz.Specs.Extensions.DataReaderExtensionsSpecs.When_retrieving_a_nullable_datetime_value_from_a_data_reader_column_given_a_data_reader_and_column_name_of_a_null_column.The_DateTime_extension_should_return_null" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
+                  <test-suite type="Namespace" name="DbCommandExtensionsSpecs" executed="True" result="Success" success="True" time="0.016" asserts="0">
+                    <results>
+                      <test-suite type="Namespace" name="Given_a_DbCommand" executed="True" result="Success" success="True" time="0.016" asserts="0">
+                        <results>
+                          <test-suite type="TestFixture" name="When_adding_a_parameter_to_the_db_command_given_a_parameter_name_and_value" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                            <results>
+                              <test-case name="IDbEz.Specs.Extensions.DbCommandExtensionsSpecs.Given_a_DbCommand.When_adding_a_parameter_to_the_db_command_given_a_parameter_name_and_value.The_extension_should_return_the_parameter_number" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="When_creating_a_parameter_given_a_parameter_name_and_value" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                            <results>
+                              <test-case name="IDbEz.Specs.Extensions.DbCommandExtensionsSpecs.Given_a_DbCommand.When_creating_a_parameter_given_a_parameter_name_and_value.The_extension_should_add_the_parameter_name_to_the_returned_parameter" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                              <test-case name="IDbEz.Specs.Extensions.DbCommandExtensionsSpecs.Given_a_DbCommand.When_creating_a_parameter_given_a_parameter_name_and_value.The_extension_should_add_the_parameter_value_to_the_returned_parameter" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                              <test-case name="IDbEz.Specs.Extensions.DbCommandExtensionsSpecs.Given_a_DbCommand.When_creating_a_parameter_given_a_parameter_name_and_value.The_extension_should_return_a_parameter_created_from_the_db_command" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="When_creating_a_parameter_given_a_parameter_name_and_value_and_DbType" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                            <results>
+                              <test-case name="IDbEz.Specs.Extensions.DbCommandExtensionsSpecs.Given_a_DbCommand.When_creating_a_parameter_given_a_parameter_name_and_value_and_DbType.The_extension_should_add_the_parameter_name_to_the_returned_parameter" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                              <test-case name="IDbEz.Specs.Extensions.DbCommandExtensionsSpecs.Given_a_DbCommand.When_creating_a_parameter_given_a_parameter_name_and_value_and_DbType.The_extension_should_add_the_parameter_value_to_the_returned_parameter" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                              <test-case name="IDbEz.Specs.Extensions.DbCommandExtensionsSpecs.Given_a_DbCommand.When_creating_a_parameter_given_a_parameter_name_and_value_and_DbType.The_extension_should_return_a_parameter_created_from_the_db_command" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                              <test-case name="IDbEz.Specs.Extensions.DbCommandExtensionsSpecs.Given_a_DbCommand.When_creating_a_parameter_given_a_parameter_name_and_value_and_DbType.The_extension_should_set_the_DbType_on_the_returned_parameter" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                            </results>
+                          </test-suite>
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
+                  <test-suite type="Namespace" name="DbConnectionExtensionsSpecs" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                    <results>
+                      <test-suite type="Namespace" name="Given_a_db_connection" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                        <results>
+                          <test-suite type="TestFixture" name="When_creating_a_db_command_given_a_command_text_string" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                            <results>
+                              <test-case name="IDbEz.Specs.Extensions.DbConnectionExtensionsSpecs.Given_a_db_connection.When_creating_a_db_command_given_a_command_text_string.The_extension_should_add_the_command_text_to_the_returned_command" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                              <test-case name="IDbEz.Specs.Extensions.DbConnectionExtensionsSpecs.Given_a_db_connection.When_creating_a_db_command_given_a_command_text_string.The_extension_should_return_a_command_from_the_connection" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                            </results>
+                          </test-suite>
+                          <test-suite type="TestFixture" name="When_sending_an_action_to_run_within_a_db_transaction" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                            <results>
+                              <test-case name="IDbEz.Specs.Extensions.DbConnectionExtensionsSpecs.Given_a_db_connection.When_sending_an_action_to_run_within_a_db_transaction.The_extension_should_begin_a_transaction_from_the_connection" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                              <test-case name="IDbEz.Specs.Extensions.DbConnectionExtensionsSpecs.Given_a_db_connection.When_sending_an_action_to_run_within_a_db_transaction.The_extension_should_commit_the_transaction" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                              <test-case name="IDbEz.Specs.Extensions.DbConnectionExtensionsSpecs.Given_a_db_connection.When_sending_an_action_to_run_within_a_db_transaction.The_extension_should_dispose_of_the_transaction" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                              <test-case name="IDbEz.Specs.Extensions.DbConnectionExtensionsSpecs.Given_a_db_connection.When_sending_an_action_to_run_within_a_db_transaction.The_extenstion_should_invoke_the_action_with_the_begun_transaction" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                            </results>
+                          </test-suite>
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+              <test-suite type="Namespace" name="ParameterManagerSpecs" executed="True" result="Success" success="True" time="0.016" asserts="0">
+                <results>
+                  <test-suite type="TestFixture" name="When_adding_a_parameter_to_a_parameter_manager" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                    <results>
+                      <test-case name="IDbEz.Specs.ParameterManagerSpecs.When_adding_a_parameter_to_a_parameter_manager.The_parameter_manager_should_return_a_parameter_name_from_the_name_generator" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="When_adding_a_parameter_value_and_dbType_to_a_parameter_manager" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                    <results>
+                      <test-case name="IDbEz.Specs.ParameterManagerSpecs.When_adding_a_parameter_value_and_dbType_to_a_parameter_manager.The_parameter_manager_should_return_a_parameter_name_from_the_name_generator" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="When_adding_an_enumerable_of_parameters_to_a_parameter_manager" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                    <results>
+                      <test-case name="IDbEz.Specs.ParameterManagerSpecs.When_adding_an_enumerable_of_parameters_to_a_parameter_manager.The_parameter_manager_should_return_the_string_from_the_parameter_names_joiner" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="When_adding_both_an_enumerable_of_parameters_and_an_individual_parameter_to_a_parameter_manager" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                    <results>
+                      <test-case name="IDbEz.Specs.ParameterManagerSpecs.When_adding_both_an_enumerable_of_parameters_and_an_individual_parameter_to_a_parameter_manager.Test_test" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="When_adding_multiple_parameters_to_a_parameter_manager" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                    <results>
+                      <test-case name="IDbEz.Specs.ParameterManagerSpecs.When_adding_multiple_parameters_to_a_parameter_manager.The_parameter_manager_should_return_an_enumerable_of_the_names_from_the_name_generator_in_the_order_the_parameters_were_added" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="Namespace" name="When_retrieving_parameters_from_a_parameter_manager" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                    <results>
+                      <test-suite type="TestFixture" name="Given_a_parameter_manager_with_multiple_parameter_values" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                        <results>
+                          <test-case name="IDbEz.Specs.ParameterManagerSpecs.When_retrieving_parameters_from_a_parameter_manager.Given_a_parameter_manager_with_multiple_parameter_values.The_parameter_manager_should_return_a_parameter_stub_collection_containing_the_stubs_from_the_factory" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                        </results>
+                      </test-suite>
+                      <test-suite type="TestFixture" name="Given_a_parameter_manager_with_no_parameters" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                        <results>
+                          <test-case name="IDbEz.Specs.ParameterManagerSpecs.When_retrieving_parameters_from_a_parameter_manager.Given_a_parameter_manager_with_no_parameters.The_parameter_manager_should_return_an_empty_parameter_stub_collection" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                        </results>
+                      </test-suite>
+                      <test-suite type="TestFixture" name="Given_a_parameter_manager_with_one_parameter_value_and_a_db_type" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                        <results>
+                          <test-case name="IDbEz.Specs.ParameterManagerSpecs.When_retrieving_parameters_from_a_parameter_manager.Given_a_parameter_manager_with_one_parameter_value_and_a_db_type.The_parameter_manager_should_return_a_parameter_stub_collection_containing_the_stub_from_the_factory" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                        </results>
+                      </test-suite>
+                      <test-suite type="TestFixture" name="Given_a_parameter_manager_with_one_parameter_value_and_no_db_type" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                        <results>
+                          <test-case name="IDbEz.Specs.ParameterManagerSpecs.When_retrieving_parameters_from_a_parameter_manager.Given_a_parameter_manager_with_one_parameter_value_and_no_db_type.The_parameter_manager_should_return_a_parameter_stub_collection_containing_the_stub_from_the_factory" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+              <test-suite type="Namespace" name="ParameterNameFactorySpecs" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                <results>
+                  <test-suite type="TestFixture" name="When_generating_a_parameter_name_given_a_non_negative_integer" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                    <results>
+                      <test-suite type="ParameterizedTest" name="The_generator_should_return_a_string_from_the_unnumbered_parameter_name_repository_with_the_integer_appended_at_the_end" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                        <results>
+                          <test-case name="IDbEz.Specs.ParameterNameFactorySpecs.When_generating_a_parameter_name_given_a_non_negative_integer.The_generator_should_return_a_string_from_the_unnumbered_parameter_name_repository_with_the_integer_appended_at_the_end(&quot;myName&quot;,2)" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+                          <test-case name="IDbEz.Specs.ParameterNameFactorySpecs.When_generating_a_parameter_name_given_a_non_negative_integer.The_generator_should_return_a_string_from_the_unnumbered_parameter_name_repository_with_the_integer_appended_at_the_end(&quot;paramName&quot;,0)" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+                          <test-case name="IDbEz.Specs.ParameterNameFactorySpecs.When_generating_a_parameter_name_given_a_non_negative_integer.The_generator_should_return_a_string_from_the_unnumbered_parameter_name_repository_with_the_integer_appended_at_the_end(&quot;20f9j2e&quot;,1203)" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+              <test-suite type="Namespace" name="ParameterNamePrefixRepositorySpecs" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                <results>
+                  <test-suite type="TestFixture" name="When_getting_the_parameter_name_prefix_from_the_repository" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                    <results>
+                      <test-case name="IDbEz.Specs.ParameterNamePrefixRepositorySpecs.When_getting_the_parameter_name_prefix_from_the_repository.The_repository_should_return_the_at_symbol" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+              <test-suite type="Namespace" name="ParameterNamesJoinerSpecs" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                <results>
+                  <test-suite type="TestFixture" name="When_joining_parameter_names_into_one_string" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                    <results>
+                      <test-suite type="ParameterizedTest" name="The_joiner_should_return_all_parameter_names_in_one_string_separated_by_the_string_from_the_separator_source" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                        <results>
+                          <test-case name="IDbEz.Specs.ParameterNamesJoinerSpecs.When_joining_parameter_names_into_one_string.The_joiner_should_return_all_parameter_names_in_one_string_separated_by_the_string_from_the_separator_source(&quot;x&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+                          <test-case name="IDbEz.Specs.ParameterNamesJoinerSpecs.When_joining_parameter_names_into_one_string.The_joiner_should_return_all_parameter_names_in_one_string_separated_by_the_string_from_the_separator_source(&quot;y&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+              <test-suite type="Namespace" name="ParameterNamesSeparatorSourceSpecs" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                <results>
+                  <test-suite type="TestFixture" name="When_returning_the_parameter_names_separator" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                    <results>
+                      <test-case name="IDbEz.Specs.ParameterNamesSeparatorSourceSpecs.When_returning_the_parameter_names_separator.The_parameter_names_separator_source_should_return_a_comma_followed_by_a_space" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+              <test-suite type="Namespace" name="ParameterRootNameRepositorySpecs" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                <results>
+                  <test-suite type="TestFixture" name="When_getting_the_paramter_root_name_from_the_repository" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                    <results>
+                      <test-case name="IDbEz.Specs.ParameterRootNameRepositorySpecs.When_getting_the_paramter_root_name_from_the_repository.The_repository_should_return_the_string_param" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+              <test-suite type="Namespace" name="ParameterStubFactorySpecs" executed="True" result="Success" success="True" time="0.016" asserts="0">
+                <results>
+                  <test-suite type="TestFixture" name="When_creating_a_parameter_stub_given_a_parameter_name_and_value" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                    <results>
+                      <test-case name="IDbEz.Specs.ParameterStubFactorySpecs.When_creating_a_parameter_stub_given_a_parameter_name_and_value.The_factory_should_return_a_paramter_stub_with_the_dbType_value_equal_to_its_default_value" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="IDbEz.Specs.ParameterStubFactorySpecs.When_creating_a_parameter_stub_given_a_parameter_name_and_value.The_factory_should_return_a_paramter_stub_with_the_name_equal_to_that_given" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="IDbEz.Specs.ParameterStubFactorySpecs.When_creating_a_parameter_stub_given_a_parameter_name_and_value.The_factory_should_return_a_paramter_stub_with_the_value_equal_to_that_given" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="When_creating_a_parameter_stub_given_a_parameter_name_and_value_and_dbType" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                    <results>
+                      <test-case name="IDbEz.Specs.ParameterStubFactorySpecs.When_creating_a_parameter_stub_given_a_parameter_name_and_value_and_dbType.The_factory_should_return_a_paramter_stub_with_the_dbType_value_equal_to_that_given" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="IDbEz.Specs.ParameterStubFactorySpecs.When_creating_a_parameter_stub_given_a_parameter_name_and_value_and_dbType.The_factory_should_return_a_paramter_stub_with_the_name_equal_to_that_given" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="IDbEz.Specs.ParameterStubFactorySpecs.When_creating_a_parameter_stub_given_a_parameter_name_and_value_and_dbType.The_factory_should_return_a_paramter_stub_with_the_value_equal_to_that_given" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+              <test-suite type="Namespace" name="ParameterUnnumberedNameRepositorySpecs" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                <results>
+                  <test-suite type="TestFixture" name="When_getting_an_unnumbered_parameter_name_given_a_parameter_name_prefix_repository_and_a_parameter_root_name_repository" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                    <results>
+                      <test-suite type="ParameterizedTest" name="The_unnumbered_parameter_name_repository_should_return_a_string_combination_of_the_prefix_and_then_the_root_name" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                        <results>
+                          <test-case name="IDbEz.Specs.ParameterUnnumberedNameRepositorySpecs.When_getting_an_unnumbered_parameter_name_given_a_parameter_name_prefix_repository_and_a_parameter_root_name_repository.The_unnumbered_parameter_name_repository_should_return_a_string_combination_of_the_prefix_and_then_the_root_name(&quot;@&quot;,&quot;param&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+                          <test-case name="IDbEz.Specs.ParameterUnnumberedNameRepositorySpecs.When_getting_an_unnumbered_parameter_name_given_a_parameter_name_prefix_repository_and_a_parameter_root_name_repository.The_unnumbered_parameter_name_repository_should_return_a_string_combination_of_the_prefix_and_then_the_root_name(&quot;aos8sd&quot;,&quot;0a8sv0asjd0wej0wvjLja&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+                          <test-case name="IDbEz.Specs.ParameterUnnumberedNameRepositorySpecs.When_getting_an_unnumbered_parameter_name_given_a_parameter_name_prefix_repository_and_a_parameter_root_name_repository.The_unnumbered_parameter_name_repository_should_return_a_string_combination_of_the_prefix_and_then_the_root_name(&quot;#&quot;,&quot;name&quot;)" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+              <test-suite type="Namespace" name="QueryBuilderSpecs" executed="True" result="Success" success="True" time="0.016" asserts="0">
+                <results>
+                  <test-suite type="TestFixture" name="When_a_string_is_added_to_the_query_builder" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                    <results>
+                      <test-case name="IDbEz.Specs.QueryBuilderSpecs.When_a_string_is_added_to_the_query_builder.The_query_builder_should_add_the_string_to_the_sql_builder" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                      <test-case name="IDbEz.Specs.QueryBuilderSpecs.When_a_string_is_added_to_the_query_builder.The_query_builder_should_not_add_anything_to_the_parameter_manager" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                      <test-case name="IDbEz.Specs.QueryBuilderSpecs.When_a_string_is_added_to_the_query_builder.The_query_builder_should_return_a_reference_to_itself" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="When_a_string_with_a_parameter_placeholder_and_a_parameter_are_added_to_a_query_builder" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                    <results>
+                      <test-case name="IDbEz.Specs.QueryBuilderSpecs.When_a_string_with_a_parameter_placeholder_and_a_parameter_are_added_to_a_query_builder.The_query_builder_should_add_the_parameter_to_the_parameter_manager" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                      <test-case name="IDbEz.Specs.QueryBuilderSpecs.When_a_string_with_a_parameter_placeholder_and_a_parameter_are_added_to_a_query_builder.The_query_builder_should_add_the_string_to_the_sql_builder_with_the_parameter_name_array_from_the_parameter_manager" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                      <test-case name="IDbEz.Specs.QueryBuilderSpecs.When_a_string_with_a_parameter_placeholder_and_a_parameter_are_added_to_a_query_builder.The_query_builder_should_return_a_reference_to_itself" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="When_a_string_with_a_parameter_placeholder_and_a_parameter_value_and_dbType_are_added_to_a_query_builder" executed="True" result="Success" success="True" time="0.016" asserts="0">
+                    <results>
+                      <test-case name="IDbEz.Specs.QueryBuilderSpecs.When_a_string_with_a_parameter_placeholder_and_a_parameter_value_and_dbType_are_added_to_a_query_builder.The_query_builder_should_add_the_parameter_value_and_dbType_to_the_parameter_manager" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                      <test-case name="IDbEz.Specs.QueryBuilderSpecs.When_a_string_with_a_parameter_placeholder_and_a_parameter_value_and_dbType_are_added_to_a_query_builder.The_query_builder_should_add_the_string_to_the_sql_builder_with_the_parameter_name_from_the_parameter_manager" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                      <test-case name="IDbEz.Specs.QueryBuilderSpecs.When_a_string_with_a_parameter_placeholder_and_a_parameter_value_and_dbType_are_added_to_a_query_builder.The_query_builder_should_return_a_reference_to_itself" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="When_retrieving_parameters_from_a_query_builder" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                    <results>
+                      <test-case name="IDbEz.Specs.QueryBuilderSpecs.When_retrieving_parameters_from_a_query_builder.The_query_builder_should_return_the_parameters_from_the_paremeter_manager" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="When_retrieving_sql_from_a_query_builder" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                    <results>
+                      <test-case name="IDbEz.Specs.QueryBuilderSpecs.When_retrieving_sql_from_a_query_builder.The_query_builder_should_return_the_sql_from_the_sql_builder" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+              <test-suite type="Namespace" name="SqlBuilderSpecs" executed="True" result="Success" success="True" time="0.016" asserts="0">
+                <results>
+                  <test-suite type="TestFixture" name="When_adding_a_string_and_a_parmater_name_to_a_sql_builder" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                    <results>
+                      <test-case name="IDbEz.Specs.SqlBuilderSpecs.When_adding_a_string_and_a_parmater_name_to_a_sql_builder.The_sql_builder_should_return_a_reference_to_itself" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="When_adding_a_string_to_a_sql_builder" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                    <results>
+                      <test-case name="IDbEz.Specs.SqlBuilderSpecs.When_adding_a_string_to_a_sql_builder.The_sql_builder_should_return_a_reference_to_itself" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="Namespace" name="When_retrieving_the_generated_sql_from_a_sql_builder" executed="True" result="Success" success="True" time="0.016" asserts="0">
+                    <results>
+                      <test-suite type="TestFixture" name="Given_a_sql_builder_with_an_input_sql_string_and_a_null_parameter_name" executed="True" result="Success" success="True" time="0.016" asserts="0">
+                        <results>
+                          <test-case name="IDbEz.Specs.SqlBuilderSpecs.When_retrieving_the_generated_sql_from_a_sql_builder.Given_a_sql_builder_with_an_input_sql_string_and_a_null_parameter_name.The_sql_builder_should_return_a_sql_string_equal_to_the_one_input" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                        </results>
+                      </test-suite>
+                      <test-suite type="TestFixture" name="Given_a_sql_builder_with_an_input_sql_string_and_no_parameter_name" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                        <results>
+                          <test-case name="IDbEz.Specs.SqlBuilderSpecs.When_retrieving_the_generated_sql_from_a_sql_builder.Given_a_sql_builder_with_an_input_sql_string_and_no_parameter_name.The_sql_builder_should_return_a_sql_string_equal_to_the_input" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                        </results>
+                      </test-suite>
+                      <test-suite type="TestFixture" name="Given_a_sql_builder_with_an_input_sql_string_with_one_parameter_placeholder_and_one_parameter_name" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                        <results>
+                          <test-case name="IDbEz.Specs.SqlBuilderSpecs.When_retrieving_the_generated_sql_from_a_sql_builder.Given_a_sql_builder_with_an_input_sql_string_with_one_parameter_placeholder_and_one_parameter_name.The_sql_builder_should_return_a_string_with_the_placeholder_replaced_with_the_parameter_name" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                        </results>
+                      </test-suite>
+                      <test-suite type="TestFixture" name="Given_a_sql_builder_with_an_input_sql_string_with_two_parameter_placeholders_and_two_parameter_names" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                        <results>
+                          <test-case name="IDbEz.Specs.SqlBuilderSpecs.When_retrieving_the_generated_sql_from_a_sql_builder.Given_a_sql_builder_with_an_input_sql_string_with_two_parameter_placeholders_and_two_parameter_names.The_sql_builder_should_return_a_string_with_the_placeholders_replaced_in_order_with_the_parameter_names" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                        </results>
+                      </test-suite>
+                      <test-suite type="TestFixture" name="Given_a_sql_builder_with_two_input_sql_strings_and_no_parameter_name" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                        <results>
+                          <test-case name="IDbEz.Specs.SqlBuilderSpecs.When_retrieving_the_generated_sql_from_a_sql_builder.Given_a_sql_builder_with_two_input_sql_strings_and_no_parameter_name.The_sql_builder_should_return_a_concatenated_sql_string" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                        </results>
+                      </test-suite>
+                      <test-suite type="TestFixture" name="Given_a_sql_builder_with_two_input_sql_strings_with_one_parameter_placeholder_and_one_parameter_name" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                        <results>
+                          <test-case name="IDbEz.Specs.SqlBuilderSpecs.When_retrieving_the_generated_sql_from_a_sql_builder.Given_a_sql_builder_with_two_input_sql_strings_with_one_parameter_placeholder_and_one_parameter_name.The_sql_builder_should_return_a_concatenated_string_with_the_placeholder_replaced_with_the_parameter_name" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                        </results>
+                      </test-suite>
+                      <test-suite type="TestFixture" name="Given_a_sql_builder_with_two_input_sql_strings_with_two_parameter_placeholders_and_two_parameter_names" executed="True" result="Success" success="True" time="0.000" asserts="0">
+                        <results>
+                          <test-case name="IDbEz.Specs.SqlBuilderSpecs.When_retrieving_the_generated_sql_from_a_sql_builder.Given_a_sql_builder_with_two_input_sql_strings_with_two_parameter_placeholders_and_two_parameter_names.The_sql_builder_should_return_a_string_with_the_placeholders_replaced_in_order_with_the_parameter_names" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

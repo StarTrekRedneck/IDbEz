@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
+  <TopNode>[0-1107]C:\Users\LordMorley\Desktop\IDbEz\Specs\bin\Debug\IDbEz.Specs.dll</TopNode>
+  <SelectedNode>[0-1107]C:\Users\LordMorley\Desktop\IDbEz\Specs\bin\Debug\IDbEz.Specs.dll</SelectedNode>
+  <ExcludeCategories>false</ExcludeCategories>
+  <Nodes>
+    <Node UniqueName="[0-1107]C:\Users\LordMorley\Desktop\IDbEz\Specs\bin\Debug\IDbEz.Specs.dll" Expanded="true" />
+    <Node UniqueName="[0-1108]IDbEz" Expanded="true" />
+    <Node UniqueName="[0-1109]IDbEz.Specs" Expanded="true" />
+    <Node UniqueName="[0-1111]IDbEz.Specs.Extensions" Expanded="true" />
+  </Nodes>
+</VisualState>
