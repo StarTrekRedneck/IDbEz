@@ -16,5 +16,11 @@ namespace IDbEz.Extensions
         {
             return ( dataReader.IsDBNull( columnName ) ? (DateTime?)null : dataReader.GetDateTime( dataReader.GetOrdinal( columnName ) ) );
         }
+
+
+        public static void Read( this IDataReader dataReader, Action<IDataReader> action )
+        {
+            while ( dataReader.Read() ) action( dataReader );
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -22,23 +23,6 @@ namespace IDbEz.Implementations
         }
 
 
-        public String AddParameter( Object parameterValue )
-        {
-            if ( parameterValue is IEnumerable<Object> )
-                return AddParameter( (IEnumerable<Object>)parameterValue );
-            else
-                return AddParameterToDictionaryAndReturnAssignedParameterName( parameterValue );
-        }
-
-
-        public String AddParameter( Object parameterValue, DbType dbType )
-        {
-            String paramName = _parameterNameGenerator.GenerateParameterName( _parameterDictionary.Count );
-            _parameterDictionary.Add( paramName, _parameterStubFactory.CreateParameterStub( paramName, parameterValue, dbType ) );
-            return paramName;
-        }
-
-
         public IEnumerable<String> AddParameters( params Object[] parameterValues )
         {
             var parameterNames = new List<String>();
@@ -51,9 +35,28 @@ namespace IDbEz.Implementations
         }
 
 
+        public String AddParameter( Object parameterValue )
+        {
+            if ( parameterValue is IEnumerable<Object> )
+                return AddParameter( (IEnumerable<Object>)parameterValue );
+            else if ( parameterValue is IEnumerable && !( parameterValue is String ) )
+                return AddParameter( ( (IEnumerable)parameterValue ).Cast<Object>() );
+            else
+                return AddParameterToDictionaryAndReturnAssignedParameterName( parameterValue );
+        }
+
+
         public String AddParameter( IEnumerable<Object> parameterValue )
         {
             return _parameterNamesJoiner.JoinNames( AddParameters( parameterValue.ToArray() ) );
+        }
+
+
+        public String AddParameter( Object parameterValue, DbType dbType )
+        {
+            String paramName = _parameterNameGenerator.GenerateParameterName( _parameterDictionary.Count );
+            _parameterDictionary.Add( paramName, _parameterStubFactory.CreateParameterStub( paramName, parameterValue, dbType ) );
+            return paramName;
         }
 
 

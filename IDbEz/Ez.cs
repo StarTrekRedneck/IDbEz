@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data;
 using IDbEz.Implementations;
+using IDbEz.ExceptionHandling;
+using IDbEz.Implementations.ExceptionHandling;
 
 
 namespace IDbEz
@@ -18,6 +20,11 @@ namespace IDbEz
         private static Func<IParameterNamesSeparatorSource> _parameterNamesSeparatorSourceFactory;
         private static Func<IParameterNamesJoiner> _parameterNamesJoinerFactory;
         private static Func<IParameterNameFactory> _parameterNameFactoryFactory;
+        private static Func<IDbExceptionHandler> _dbExceptionHandlerFactory;
+        private static Func<IExceptionMessageFormatter> _exceptionMessageFormatterFactory;
+        private static Func<ISqlFormatter> _sqlFormatterFactory;
+        private static Func<IParameterStubCollectionFormatter> _parameterStubCollectionFormatterFactory;
+        private static Func<IParameterStubFormatter> _parameterStubFormatterFactory;
 
         //private static Dictionary<Type, Func<Object>> _registry = new Dictionary<Type, Func<Object>>();
 
@@ -47,7 +54,7 @@ namespace IDbEz
 
         public static IParameterManager ParameterManager()
         {
-            return Resolve( _parameterManagerFactory, () => new ParameterManager( ParameterNameGenerator(), ParameterNamesJoiner(), ParameterStubFactory() ) );
+            return Resolve( _parameterManagerFactory, () => new ParameterManager( ParameterNameFactory(), ParameterNamesJoiner(), ParameterStubFactory() ) );
         }
 
 
@@ -137,7 +144,7 @@ namespace IDbEz
         }
 
 
-        public static IParameterNameFactory ParameterNameGenerator()
+        public static IParameterNameFactory ParameterNameFactory()
         {
             return Resolve( _parameterNameFactoryFactory, () => new ParameterNameFactory( ParameterUnnumberedNameRepository() ) );
         }
@@ -146,6 +153,66 @@ namespace IDbEz
         public static void ReplaceParameterNameFactory( Func<IParameterNameFactory> parameterNameFactoryFactory )
         {
             _parameterNameFactoryFactory = parameterNameFactoryFactory;
+        }
+
+
+        public static IDbExceptionHandler DbExceptionHandler()
+        {
+            return Resolve( _dbExceptionHandlerFactory, () => new DbExceptionHandler( Ez.ExceptionMessageFormatter() ) );
+        }
+
+
+        public static void ReplaceDbExceptionHandler( Func<IDbExceptionHandler> dbExceptionHandlerFactory )
+        {
+            _dbExceptionHandlerFactory = dbExceptionHandlerFactory;
+        }
+
+
+        public static IExceptionMessageFormatter ExceptionMessageFormatter()
+        {
+            return Resolve( _exceptionMessageFormatterFactory, () => new ExceptionMessageFormatter( Ez.SqlFormatter(), Ez.ParameterStubCollectionFormatter() ) );
+        }
+
+
+        public static void ReplaceExceptionMessageFormatter( Func<IExceptionMessageFormatter> exceptionMessageFormatterFactory )
+        {
+            _exceptionMessageFormatterFactory = exceptionMessageFormatterFactory;
+        }
+
+
+        public static ISqlFormatter SqlFormatter()
+        {
+            return Resolve( _sqlFormatterFactory, () => new SqlFormatter() );
+        }
+
+
+        public static void ReplaceSqlFormatter( Func<ISqlFormatter> sqlFormatterFactory )
+        {
+            _sqlFormatterFactory = sqlFormatterFactory;
+        }
+
+
+        public static IParameterStubCollectionFormatter ParameterStubCollectionFormatter()
+        {
+            return Resolve( _parameterStubCollectionFormatterFactory, () => new ParameterStubCollectionFormatter( Ez.ParameterStubFormatter() ) );
+        }
+
+
+        public static void ReplaceParameterStubCollectionFormatter( Func<IParameterStubCollectionFormatter> parameterStubCollectionFormatterFactory )
+        {
+            _parameterStubCollectionFormatterFactory = parameterStubCollectionFormatterFactory;
+        }
+
+
+        public static IParameterStubFormatter ParameterStubFormatter()
+        {
+            return Resolve( _parameterStubFormatterFactory, () => new ParameterStubFormatter() );
+        }
+
+
+        public static void ReplaceParameterStubFormatter( Func<IParameterStubFormatter> parameterStubFormatterFactory )
+        {
+            _parameterStubFormatterFactory = parameterStubFormatterFactory;
         }
 
 

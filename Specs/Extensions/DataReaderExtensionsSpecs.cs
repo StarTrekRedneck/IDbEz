@@ -15,10 +15,10 @@ namespace IDbEz.Specs.Extensions.DataReaderExtensionsSpecs
         [TestCase( false )]
         public void The_IsDbNull_extension_should_return_the_whether_the_column_is_db_null( Boolean testColumnIsDbNull )
         {
-            _dbReader.Stub( r => r.GetOrdinal( _columnName ) ).Return( _columnNum );
-            _dbReader.Stub( r => r.IsDBNull( _columnNum ) ).Return( testColumnIsDbNull );
+            _dataReader.Stub( r => r.GetOrdinal( _columnName ) ).Return( _columnNum );
+            _dataReader.Stub( r => r.IsDBNull( _columnNum ) ).Return( testColumnIsDbNull );
 
-            var result = _dbReader.IsDBNull( _columnName );
+            var result = _dataReader.IsDBNull( _columnName );
 
             Assert.AreEqual( testColumnIsDbNull, result );
         }
@@ -31,10 +31,10 @@ namespace IDbEz.Specs.Extensions.DataReaderExtensionsSpecs
         [Test]
         public void The_DateTime_extension_should_return_null()
         {
-            _dbReader.Stub( r => r.GetOrdinal( _columnName ) ).Return( _columnNum );
-            _dbReader.Stub( r => r.IsDBNull( _columnNum ) ).Return( true );
+            _dataReader.Stub( r => r.GetOrdinal( _columnName ) ).Return( _columnNum );
+            _dataReader.Stub( r => r.IsDBNull( _columnNum ) ).Return( true );
 
-            DateTime? result = _dbReader.GetDateTime( _columnName );
+            DateTime? result = _dataReader.GetDateTime( _columnName );
 
             Assert.IsNull( result );
         }
@@ -47,11 +47,11 @@ namespace IDbEz.Specs.Extensions.DataReaderExtensionsSpecs
         [Test]
         public void The_DateTime_extension_should_return_the_date_time_value()
         {
-            _dbReader.Stub( r => r.GetOrdinal( _columnName ) ).Return( _columnNum );
-            _dbReader.Stub( r => r.IsDBNull( _columnNum ) ).Return( false );
-            _dbReader.Stub( r => r.GetDateTime( _columnNum ) ).Return( _dateTime );
+            _dataReader.Stub( r => r.GetOrdinal( _columnName ) ).Return( _columnNum );
+            _dataReader.Stub( r => r.IsDBNull( _columnNum ) ).Return( false );
+            _dataReader.Stub( r => r.GetDateTime( _columnNum ) ).Return( _dateTime );
 
-            DateTime? result = _dbReader.GetDateTime( _columnName );
+            DateTime? result = _dataReader.GetDateTime( _columnName );
 
             Assert.AreEqual( _dateTime, result );
         }
@@ -63,7 +63,7 @@ namespace IDbEz.Specs.Extensions.DataReaderExtensionsSpecs
         protected String _columnName;
         protected Int32 _columnNum;
         protected DateTime _dateTime;
-        protected IDataReader _dbReader;
+        protected IDataReader _dataReader;
 
 
         [SetUp]
@@ -72,7 +72,7 @@ namespace IDbEz.Specs.Extensions.DataReaderExtensionsSpecs
             _columnName = "column";
             _columnNum = 1;
             _dateTime = DateTime.Now;
-            _dbReader = MockRepository.GenerateMock<IDataReader>();
+            _dataReader = MockRepository.GenerateMock<IDataReader>();
         }
     }
 }

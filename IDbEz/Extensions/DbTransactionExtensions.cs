@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Common;
 
 
 namespace IDbEz.Extensions
@@ -39,10 +40,23 @@ namespace IDbEz.Extensions
 
         public static void ExecuteReader( this IDbTransaction dbTransaction, String sql, IEnumerable<IParameterStub> parameterStubs, Action<IDataReader> action )
         {
-            using ( IDbCommand dbCommand = dbTransaction.CreateCommand( sql, parameterStubs ) )
-            using ( IDataReader dbReader = dbCommand.ExecuteReader() )
+            try
             {
-                action( dbReader );
+                RootExecuteReader( dbTransaction, sql, parameterStubs, action );
+            }
+            catch ( DbException ex )
+            {
+                Ez.DbExceptionHandler().Handle( ex, sql, parameterStubs );
+            }
+        }
+
+
+        private static void RootExecuteReader( this IDbTransaction dbTransaction, String sql, IEnumerable<IParameterStub> parameterStubs, Action<IDataReader> action )
+        {
+            using ( IDbCommand dbCommand = dbTransaction.CreateCommand( sql, parameterStubs ) )
+            using ( IDataReader dataReader = dbCommand.ExecuteReader() )
+            {
+                action( dataReader );
             }
         }
 
@@ -50,7 +64,7 @@ namespace IDbEz.Extensions
         public static void ExecuteReaderAndRead( this IDbTransaction dbTransaction, Action<IDataReader> action, String sql, params Object[] parameterValues )
         {
             ExecuteReader( dbTransaction,
-                           dbReader => { while ( dbReader.Read() ) action( dbReader ); },
+                           dataReader => dataReader.Read( action ),
                            sql,
                            parameterValues );
         }
@@ -58,10 +72,10 @@ namespace IDbEz.Extensions
 
         public static void ExecuteReaderAndRead( this IDbTransaction dbTransaction, IQueryBuilder query, Action<IDataReader> action )
         {
-            ExecuteReader( dbTransaction, 
+            ExecuteReader( dbTransaction,
                            query.GetSql(),
                            query.GetParameters(),
-                           dbReader => { while ( dbReader.Read() ) action( dbReader ); } );
+                           dataReader => dataReader.Read( action ) );
         }
 
 
@@ -70,7 +84,7 @@ namespace IDbEz.Extensions
             ExecuteReader( dbTransaction,
                            sql,
                            parameterStubs,
-                           dbReader => { while ( dbReader.Read() ) action( dbReader ); } );
+                           dataReader => dataReader.Read( action ) );
         }
 
 
@@ -89,6 +103,19 @@ namespace IDbEz.Extensions
 
 
         public static void ExecuteNonQuery( this IDbTransaction dbTransaction, String sql, IEnumerable<IParameterStub> parameterStubs )
+        {
+            try
+            {
+                RootExecuteNonQuery( dbTransaction, sql, parameterStubs );
+            }
+            catch ( DbException ex )
+            {
+                Ez.DbExceptionHandler().Handle( ex, sql, parameterStubs );
+            }
+        }
+
+
+        private static void RootExecuteNonQuery( this IDbTransaction dbTransaction, String sql, IEnumerable<IParameterStub> parameterStubs )
         {
             using ( IDbCommand dbCommand = dbTransaction.CreateCommand( sql, parameterStubs ) )
             {

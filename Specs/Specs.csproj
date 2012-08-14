@@ -42,20 +42,25 @@
     <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Implementations\ExceptionHandling\DbExceptionHandlerSpecs.cs" />
+    <Compile Include="Implementations\ExceptionHandling\ExceptionMessageFormatterSpecs.cs" />
     <Compile Include="Extensions\DataReaderExtensionsSpecs.cs" />
     <Compile Include="Extensions\DbCommandExtensionsSpecs.cs" />
     <Compile Include="Extensions\DbConnectionExtensionsSpecs.cs" />
-    <Compile Include="ParameterManagerSpecs.cs" />
-    <Compile Include="ParameterNameFactorySpecs.cs" />
-    <Compile Include="ParameterNamePrefixRepositorySpecs.cs" />
-    <Compile Include="ParameterNamesJoinerSpecs.cs" />
-    <Compile Include="ParameterNamesSeparatorSourceSpecs.cs" />
-    <Compile Include="ParameterRootNameRepositorySpecs.cs" />
-    <Compile Include="ParameterStubFactorySpecs.cs" />
-    <Compile Include="SqlBuilderSpecs.cs" />
+    <Compile Include="Implementations\ExceptionHandling\ParameterStubCollectionFormatterSpecs.cs" />
+    <Compile Include="Implementations\ExceptionHandling\ParameterStubFormatterSpecs.cs" />
+    <Compile Include="Implementations\ExceptionHandling\SqlFormatterSpecs.cs" />
+    <Compile Include="Implementations\ParameterManagerSpecs.cs" />
+    <Compile Include="Implementations\ParameterNameFactorySpecs.cs" />
+    <Compile Include="Implementations\ParameterNamePrefixRepositorySpecs.cs" />
+    <Compile Include="Implementations\ParameterNamesJoinerSpecs.cs" />
+    <Compile Include="Implementations\ParameterNamesSeparatorSourceSpecs.cs" />
+    <Compile Include="Implementations\ParameterRootNameRepositorySpecs.cs" />
+    <Compile Include="Implementations\ParameterStubFactorySpecs.cs" />
+    <Compile Include="Implementations\SqlBuilderSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QueryBuilderSpecs.cs" />
-    <Compile Include="ParameterUnnumberedNameRepositorySpecs.cs" />
+    <Compile Include="Implementations\QueryBuilderSpecs.cs" />
+    <Compile Include="Implementations\ParameterUnnumberedNameRepositorySpecs.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IDbEz\IDbEz.csproj">
