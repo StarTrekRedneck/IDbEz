@@ -19,8 +19,8 @@ namespace IDbEz.Implementations.ExceptionHandling
 
         public String Format( IEnumerable<IParameterStub> parameterStubs )
         {
-            return String.Join( Environment.NewLine, 
-                                parameterStubs.Select( _parameterStubFormatter.Format ) );
+            var parametersFormattedForExceptionMessage = parameterStubs.Select( _parameterStubFormatter.Format ).ToArray();
+            return String.Join( Environment.NewLine, parametersFormattedForExceptionMessage );
         }
     }
 }
