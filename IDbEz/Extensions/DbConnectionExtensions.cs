@@ -26,10 +26,13 @@ namespace IDbEz.Extensions
 
         public static void ExecuteReader( this IDbConnection dbConnection, IQueryBuilder queryBuilder, Action<IDataReader> action )
         {
-            using ( IDbTransaction dbTransaction = dbConnection.BeginTransaction() )
-            {
-                dbTransaction.ExecuteReader( queryBuilder, action );
-            }
+            dbConnection.RunInTransaction( dbTrans => dbTrans.ExecuteReader( queryBuilder, action ) );
+        }
+
+
+        public static void ExecuteReaderAndRead( this IDbConnection dbConnection, IQueryBuilder queryBuilder, Action<IDataReader> action )
+        {
+            dbConnection.RunInTransaction( dbTrans => dbTrans.ExecuteReaderAndRead( queryBuilder, action ) );
         }
     }
 }
