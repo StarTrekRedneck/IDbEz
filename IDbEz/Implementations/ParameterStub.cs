@@ -6,24 +6,79 @@ namespace IDbEz.Implementations
 {
     internal class ParameterStub : IParameterStub
     {
-        public Byte Precision { get; set; }
+        private Byte _precision;
+        public Byte Precision
+        {
+            get { return _precision; }
+            set { _precision = value; PrecisionManuallySet = true; }
+        }
 
-        public Byte Scale { get; set; }
 
-        public Int32 Size { get; set; }
+        private Byte _scale;
+        public Byte Scale
+        {
+            get { return _scale; }
+            set { _scale = value; ScaleManuallySet = true; }
+        }
 
-        public DbType DbType { get; set; }
+        
+        private Int32 _size;
+        public Int32 Size
+        {
+            get { return _size; }
+            set { _size = value; SizeManuallySet = true; }
+        }
 
-        public ParameterDirection Direction { get; set; }
+        
+        private DbType _dbType;
+        public DbType DbType
+        {
+            get { return _dbType; }
+            set { _dbType = value; DbTypeManuallySet = true; }
+        }
+
+
+        private ParameterDirection _direction;
+        public ParameterDirection Direction
+        {
+            get { return _direction; }
+            set { _direction = value; DirectionManuallySet = true; }
+        }
+
 
         public Boolean IsNullable { get; private set; }
 
+
         public String ParameterName { get; set; }
 
-        public String SourceColumn { get; set; }
 
-        public DataRowVersion SourceVersion { get; set; }
+        private String _sourceColumn;
+        public String SourceColumn
+        {
+            get { return _sourceColumn; }
+            set { _sourceColumn = value; SourceColumnManuallySet = true; }
+        }
+
+
+        private DataRowVersion _sourceVersion;
+        public DataRowVersion SourceVersion
+        {
+            get { return _sourceVersion; }
+            set { _sourceVersion = value; SourceVersionManuallySet = true; }
+        }
+
 
         public Object Value { get; set; }
+
+
+        public Boolean PrecisionManuallySet { get; private set; }
+        public Boolean ScaleManuallySet { get; private set; }
+        public Boolean SizeManuallySet { get; private set; }
+        public Boolean DbTypeManuallySet { get; private set; }
+        public Boolean DirectionManuallySet { get; private set; }
+        public Boolean IsNullableManuallySet { get; private set; }
+        public Boolean ParameterNameManuallySet { get; private set; }
+        public Boolean SourceColumnManuallySet { get; private set; }
+        public Boolean SourceVersionManuallySet { get; private set; }
     }
 }

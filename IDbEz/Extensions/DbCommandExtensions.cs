@@ -7,6 +7,35 @@ namespace IDbEz.Extensions
 {
     public static class DbCommandExtensions
     {
+        public static IDbDataParameter CreateParameter( this IDbCommand dbCommand, IParameterStub parameterStub )
+        {
+            IDbDataParameter dbParameter = dbCommand.CreateParameter( parameterStub.ParameterName, parameterStub.Value );
+
+            if ( parameterStub.DbTypeManuallySet )
+                dbParameter.DbType = parameterStub.DbType;
+
+            if ( parameterStub.DirectionManuallySet )
+                dbParameter.Direction = parameterStub.Direction;
+
+            if ( parameterStub.PrecisionManuallySet )
+                dbParameter.Precision = parameterStub.Precision;
+
+            if ( parameterStub.ScaleManuallySet )
+                dbParameter.Scale = parameterStub.Scale;
+
+            if ( parameterStub.SizeManuallySet )
+                dbParameter.Size = parameterStub.Size;
+
+            if ( parameterStub.SourceColumnManuallySet )
+                dbParameter.SourceColumn = parameterStub.SourceColumn;
+
+            if ( parameterStub.SourceVersionManuallySet )
+                dbParameter.SourceVersion = parameterStub.SourceVersion;
+
+            return dbParameter;
+        }
+
+
         public static IDbDataParameter CreateParameter( this IDbCommand dbCommand, String dbParameterName, Object dbParameterValue )
         {
             IDbDataParameter dbParameter = dbCommand.CreateParameter();
