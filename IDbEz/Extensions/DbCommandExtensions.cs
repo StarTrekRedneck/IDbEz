@@ -59,12 +59,19 @@ namespace IDbEz.Extensions
         }
 
 
-        public static void AddParameters( this IDbCommand dbCommand, IEnumerable<IParameterStub> parameterStubs )
-        {
-            foreach ( var parameterStub in parameterStubs )
-            {
-                dbCommand.AddParameter( parameterStub.ParameterName, parameterStub.Value );
-            }
-        }
-    }
+		public static void AddParameter( this IDbCommand dbCommand, IParameterStub parameterStub )
+		{
+			IDbDataParameter dbParameter = dbCommand.CreateParameter( parameterStub );
+			dbCommand.Parameters.Add( dbParameter );
+		}
+
+
+		public static void AddParameters( this IDbCommand dbCommand, IEnumerable<IParameterStub> parameterStubs )
+		{
+			foreach ( var parameterStub in parameterStubs )
+			{
+				dbCommand.AddParameter( parameterStub );
+			}
+		}
+	}
 }
