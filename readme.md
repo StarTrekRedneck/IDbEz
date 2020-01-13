@@ -99,43 +99,47 @@ Notice that the use of the parameter placeholders (the '{0}') functions exactly 
 
 Like I mentioned above, I suggest isolating your connection code in just one spot in your application, giving you the ability to manage the connection across potentially multiple uses. If you do this and wrap up database transactions too, you can send the QueryBuilder object into transactions via the extension methods. This is what most of my querying ends up looking like...
 
-	  using System.Data;
-	  using IDbEz;
-	  using IDbEz.Extensions;
-	  
-	  public class MyClass
-	  {
-	    private IRunInTransaction _runInTransaction;  // This class calls a passed-in delegate giving it a database transaction which it afterwards commits
-		private IMapQueryResultsToOrder _mapQueryResultsToOrder; // This class maps a data reader's results into a single customer order
-		
-	    public MyClass( IRunInTransaction runInTransaction, IMapQueryResultsToOrder mapQueryResultsToOrder )
+	using System.Data;
+	using IDbEz;
+	using IDbEz.Extensions;
+	
+	public class MyClass
+	{
+		private IRunInTransaction _runInTransaction;  // This class calls a passed-in delegate giving it a database transaction which it afterwards commits
+
+		public MyClass( IRunInTransaction runInTransaction )
 		{
-		  _runInTransaction = runInTransaction;
-		  _mapQueryResultsToOrder = mapQueryResultsToOrder;
+			_runInTransaction = runInTransaction;
 		}
-		
-		
+
+
 		public IEnumerable<Order> GetOrders( IEnumerable<String> orderNumbers )
 		{
-		  IEnumerable<Order> orders = null;
-		  _runInTransaction.Execute( dbTrans => orders = GetOrders( orderNumbers, dbTrans );
-		  return orders;
+			IEnumerable<Order> orders = null;
+			_runInTransaction.Execute( dbTrans => orders = GetOrders( orderNumbers, dbTrans );
+			return orders;
 		}
 		
 		
 		private IEnumerable<Order> GetOrders( IEnumerable<String> orderNumbers, IDbTransaction dbTransaction )
 		{
-		  var query = Ez.QueryBuilder();
-		  query.Add( @"	select *
-						from customer_orders 
-						where order_number in ({0})
-					  ", orderNumbers );
+			var query = Ez.QueryBuilder();
+			query.Add( @"	select *
+			                from customer_orders 
+			                where order_number in ({0}) ", orderNumbers );
 
-		  IEnumerable<Order> orders = new List<Order>();
-		  dbTransaction.ExecuteReaderAndRead( query, reader => orders.Add( MapQueryResultsToOrder( reader ) );
-		  return orders;
+			IEnumerable<Order> orders = new List<Order>();
+			dbTransaction.ExecuteReaderAndRead( query, reader => orders.Add( MapQueryResultsToOrder( reader ) );
+			return orders;
 		}
-	  }
+		
+		
+		private Order MapQueryResultsToOrder( IDataReader dataReader )
+		{
+			// instantiates an Order object and populates its properties with values from the reader
+			...
+		}
+	}
 	  
 In the above example, the public GetOrders method executes the RunInTransaction process, setting it's orders collection equal to the return from the private GetOrders. That function takes the transaction and utilizes IDbEz's QueryBuilder and an extension method to keep the focus of the function on the query. The ExecuteReaderAndRead() method performs a while ( reader.Read() ) loop, calling the anonymous delegate which adds the mapped order to the locally scoped orders collection.
 
